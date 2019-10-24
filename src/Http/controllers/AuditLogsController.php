@@ -30,7 +30,7 @@ class AuditLogsController extends Controller {
         $requestData = $request->all();
         $data = $activityLogs->allAuditLogs($requestData);
         $url = "report/audit-log-print";
-        return view('laravel-logs:auditlogs.audit-log', ['data' => $data, 'url' => $url]);
+        return view('laravel-logs::auditlogs.audit-log', ['data' => $data, 'url' => $url]);
     }
 
     public function ajax(Request $request, ActivityLogInterface $activityLogs) {
@@ -44,7 +44,7 @@ class AuditLogsController extends Controller {
             //print_r($data);
 
 //            print_r($data);die;
-            return view('laravel-logs:auditlogs.audit-log-grid', ["data" => $data]);
+            return view('laravel-logs::auditlogs.audit-log-grid', ["data" => $data]);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -57,7 +57,7 @@ class AuditLogsController extends Controller {
             $data = $activityLogs->allAuditLogs($filters);
 
 //            print_r($data);die;
-            return view('laravel-logs:auditlogs.audit-log-print', ["data" => $data, "request" => $filters]);
+            return view('laravel-logs::auditlogs.audit-log-print', ["data" => $data, "request" => $filters]);
         } catch (\Exception $e) {
             throw $e;
         }
