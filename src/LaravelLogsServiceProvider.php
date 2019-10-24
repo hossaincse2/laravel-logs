@@ -7,7 +7,7 @@ class LaravelLogsServiceProvider extends ServiceProvider {
     public function boot()
     {
        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
-       $this->loadViewsFrom(__DIR__.'/resources/views', 'laravelLogs');
+       $this->loadViewsFrom(__DIR__.'/resources/views', 'laravel-logs');
        $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
        $this->app->bind(ActivityLogInterface::class, ActivityLogService::class);
     }

@@ -38,7 +38,7 @@ class ErrorLogsController extends Controller {
         $requestData = $request->all();
         $data = $activityLogs->allErrorLogs($requestData);
         $url = "report/error-log-print";
-        return view('laravelLogs:errorlogs.error-log', ['data' => $data, 'url' => $url]);
+        return view('laravel-logs:errorlogs.error-log', ['data' => $data, 'url' => $url]);
     }
 
     public function ajax(Request $request, ActivityLogInterface $activityLogs) {
@@ -52,7 +52,7 @@ class ErrorLogsController extends Controller {
             //print_r($data);
 
 //            print_r($data);die;
-            return view('laravelLogs:errorlogs.error-log-grid', ["data" => $data]);
+            return view('laravel-logs:errorlogs.error-log-grid', ["data" => $data]);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -65,7 +65,7 @@ class ErrorLogsController extends Controller {
             $data = $activityLogs->allErrorLogs($filters);
 
 //            print_r($data);die;
-            return view('laravelLogs:errorlogs.error-log-print', ["data" => $data, "request" => $filters]);
+            return view('laravel-logs:errorlogs.error-log-print', ["data" => $data, "request" => $filters]);
         } catch (\Exception $e) {
             throw $e;
         }
