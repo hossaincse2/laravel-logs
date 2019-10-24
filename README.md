@@ -47,7 +47,7 @@ composer require mdhossain/laravel-logs
          ...,
             App\Providers\RouteServiceProvider::class, 
             // Our new package class
-            MDHossain\laravelLogs\LaravelLogsServiceProvider::class,
+            Mdhossain\LaravelLogs\LaravelLogsServiceProvider::class,
          ],
 ```
 - Migrate the database tables
@@ -76,6 +76,16 @@ public function insertUser(ActivityLogInterface $activitylog){
 ```
 http://localhost:8000/audit-log
 http://localhost:8000/error-log
+
+```
+
+OR 
+
+- Call your controller view
+
+```
+return view('laravel-logs::auditlogs.audit-log');
+return view('laravel-logs::errorlogs.error-log');
 
 ```
 
