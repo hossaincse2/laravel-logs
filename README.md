@@ -47,7 +47,7 @@ composer require mdhossain/laravel-logs
          ...,
             App\Providers\RouteServiceProvider::class, 
             // Our new package class
-            MDHossain\laravelLogs\ContactFormServiceProvider::class,
+            MDHossain\laravelLogs\LaravelLogsServiceProvider::class,
          ],
 ```
 - Migrate the database tables
