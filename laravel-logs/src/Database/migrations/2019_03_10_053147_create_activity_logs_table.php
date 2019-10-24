@@ -1,0 +1,52 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateActivityLogsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('activity_logs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->string('log_type')->nullable();
+            $table->text('long_text');
+            $table->string('request_uri')->nullable();
+            $table->string('client_ip')->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('store_id')->unsigned()->nullable();
+            $table->integer('factory_id')->unsigned()->nullable();
+            $table->timestamps();
+
+            $table->foreign('factory_id')
+                ->references('id')
+                ->on('factories')
+            ;
+            $table->foreign('store_id')
+                ->references('id')
+                ->on('stores')
+            ;
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+            ;
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('activity_logs');
+    }
+}
