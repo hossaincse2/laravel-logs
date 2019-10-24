@@ -57,7 +57,7 @@ php artisan key:generate
 
 You can install the package via composer:
 
-composer require chargefield/laravel-widget
+composer require mdhossain/laravel-logs
 
 ```
 - Dump the composer autoloader
@@ -92,7 +92,7 @@ Visit http://localhost:8000/ in your browser to view the demo.
 If you want to include the project as a package to your app, run:
 
 ```
-composer require chargefield/laravel-widget
+composer require mdhossain/laravel-logs
 ```
 
 ## Built With
