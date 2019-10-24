@@ -1,15 +1,5 @@
-@extends('adminlte::layouts.app')
-
-@section('htmlheader_title')
-Audit Log Report
-@endsection
-
-@section('contentheader_title')
-Audit Log Report
-@endsection
-
-
-@section('main-content')
+@extends('laravel-logs::layouts.app')
+@section('content')
 
 
 

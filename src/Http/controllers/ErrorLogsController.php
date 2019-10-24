@@ -37,7 +37,7 @@ class ErrorLogsController extends Controller {
 
         $requestData = $request->all();
         $data = $activityLogs->allErrorLogs($requestData);
-        $url = "report/error-log-print";
+        $url = "error-log-print";
         return view('laravel-logs::errorlogs.error-log', ['data' => $data, 'url' => $url]);
     }
 

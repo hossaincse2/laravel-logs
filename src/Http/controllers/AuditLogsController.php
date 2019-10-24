@@ -29,7 +29,7 @@ class AuditLogsController extends Controller {
 
         $requestData = $request->all();
         $data = $activityLogs->allAuditLogs($requestData);
-        $url = "report/audit-log-print";
+        $url = "audit-log-print";
         return view('laravel-logs::auditlogs.audit-log', ['data' => $data, 'url' => $url]);
     }
 
