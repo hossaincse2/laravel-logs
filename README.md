@@ -7,13 +7,7 @@ A Laravel package is a set of reusable classes created to add extra functionalit
 - Create a fresh laravel package
 
 ```
-composer create-project --prefer-dist laravel/laravel packagetestapp
-
-Or
-
-You can install the package via composer:
-
-composer require chargefield/laravel-widget
+composer create-project --prefer-dist laravel/laravel packagetestapp 
 ```
 - change directory to the new folder
 
@@ -58,6 +52,13 @@ php artisan key:generate
             "Tests\\": "tests/"
         }
     },
+
+    Or
+
+You can install the package via composer:
+
+composer require chargefield/laravel-widget
+
 ```
 - Dump the composer autoloader
 
@@ -86,12 +87,12 @@ And finally, start the application by running:
 php artisan serve
 ```
 
-Visit http://localhost:8000/contact in your browser to view the demo.
+Visit http://localhost:8000/ in your browser to view the demo.
 
 If you want to include the project as a package to your app, run:
 
 ```
-composer require samuelayo/contactform
+composer require chargefield/laravel-widget
 ```
 
 ## Built With
