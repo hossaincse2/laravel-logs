@@ -6,10 +6,10 @@
  */
 
 
-namespace MDHossain\laravelLogs\Http\Controllers;
+namespace Mdhossain\LaravelLogs\Http\Controllers;
 
-use MDHossain\laravelLogs\Models\ActivityLog;
-use MDHossain\laravelLogs\Contracts\ActivityLogInterface;
+use Mdhossain\LaravelLogs\Models\ActivityLog;
+use Mdhossain\LaravelLogs\Contracts\ActivityLogInterface;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

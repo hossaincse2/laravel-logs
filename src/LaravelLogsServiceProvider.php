@@ -1,8 +1,8 @@
 <?php
-namespace MDHossain\laravelLogs;
+namespace Mdhossain\LaravelLogs;
 use Illuminate\Support\ServiceProvider;
-use MDHossain\laravelLogs\Contracts\ActivityLogInterface;
-use MDHossain\laravelLogs\Services\ActivityLogService;
+use Mdhossain\LaravelLogs\Contracts\ActivityLogInterface;
+use Mdhossain\LaravelLogs\Services\ActivityLogService;
 class LaravelLogsServiceProvider extends ServiceProvider {
     public function boot()
     {

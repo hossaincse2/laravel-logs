@@ -1,6 +1,6 @@
 <?php
 
-namespace MDHossain\laravelLogs\Models;
+namespace Mdhossain\LaravelLogs\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Auth;
@@ -29,8 +29,5 @@ class ActivityLog extends Model {
         ''
     ];
 
-      public function user() {
-        return $this->belongsTo(\App\User::class);
-    }
-  
+     
 }

@@ -5,10 +5,10 @@
  * https://github.com/laravel/framework/blob/5.3/src/Illuminate/Auth/Console/stubs/make/controllers/HomeController.stub
  */
 
-namespace MDHossain\laravelLogs\Http\Controllers;
+namespace Mdhossain\LaravelLogs\Http\Controllers;
 
-use MDHossain\laravelLogs\Models\ActivityLog;
-use MDHossain\laravelLogs\Contracts\ActivityLogInterface;
+use Mdhossain\LaravelLogs\Models\ActivityLog;
+use Mdhossain\LaravelLogs\Contracts\ActivityLogInterface;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

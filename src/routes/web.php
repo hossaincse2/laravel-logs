@@ -1,5 +1,5 @@
 <?php
-Route::group(['namespace' => 'MDHossain\laravelLogs\Http\Controllers', 'middleware' => ['web']], function(){
+Route::group(['namespace' => 'Mdhossain\LaravelLogs\Http\Controllers', 'middleware' => ['web']], function(){
    
     // Audit Logs (22-05-2019, Created By Rajan Bhatta)
 
