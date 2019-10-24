@@ -1,9 +1,9 @@
 <?php
 
-namespace MDHossain\laravelLogs\Services;
+namespace Mdhossain\LaravelLogs\Services;
 
-use MDHossain\laravelLogs\Models\ActivityLog;
-use MDHossain\laravelLogs\Contracts\ActivityLogInterface;
+use Mdhossain\LaravelLogs\Models\ActivityLog;
+use Mdhossain\LaravelLogs\Contracts\ActivityLogInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 

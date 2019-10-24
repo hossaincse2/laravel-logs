@@ -1,6 +1,6 @@
 <?php
 
-namespace MDHossain\laravelLogs\Contracts;
+namespace Mdhossain\LaravelLogs\Contracts;
 
 /**
  * Description of Moshuk17ReportInterface
