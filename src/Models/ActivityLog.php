@@ -16,7 +16,7 @@ class ActivityLog extends Model {
      * @var array
      */
     protected $fillable = [
-        'title', 'log_type', 'long_text', 'request_uri', 'client_ip', 'user_id', 'store_id', 'factory_id'
+        'title', 'log_type', 'long_text', 'request_uri', 'client_ip'
     ];
 
         protected $with = ['user'];
