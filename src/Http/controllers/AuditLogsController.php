@@ -21,21 +21,21 @@ use Illuminate\Support\Facades\Session;
 class AuditLogsController extends Controller {
 
     public function __construct() {
-        
+
     }
 
     public function index(Request $request, ActivityLogInterface $activityLogs) {
-        
-      
+
+
         $requestData = $request->all();
         $data = $activityLogs->allAuditLogs($requestData);
         $url = "report/audit-log-print";
-        return view('auditlogs.audit-log', ['data' => $data, 'url' => $url]);
+        return view('laravelLogs:auditlogs.audit-log', ['data' => $data, 'url' => $url]);
     }
 
     public function ajax(Request $request, ActivityLogInterface $activityLogs) {
 
-   
+
 
         try {
             $filters = $request->all();
@@ -44,7 +44,7 @@ class AuditLogsController extends Controller {
             //print_r($data);
 
 //            print_r($data);die;
-            return view('adminlte::report.audit-log-grid', ["data" => $data]);
+            return view('laravelLogs::auditlogs.audit-log-grid', ["data" => $data]);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -57,7 +57,7 @@ class AuditLogsController extends Controller {
             $data = $activityLogs->allAuditLogs($filters);
 
 //            print_r($data);die;
-            return view('adminlte::report.audit-log-print', ["data" => $data, "request" => $filters]);
+            return view('laravelLogs::auditlogs.audit-log-print', ["data" => $data, "request" => $filters]);
         } catch (\Exception $e) {
             throw $e;
         }
