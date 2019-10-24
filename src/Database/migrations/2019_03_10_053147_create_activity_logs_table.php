@@ -21,18 +21,8 @@ class CreateActivityLogsTable extends Migration
             $table->string('request_uri')->nullable();
             $table->string('client_ip')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
-            $table->integer('store_id')->unsigned()->nullable();
-            $table->integer('factory_id')->unsigned()->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
 
-            $table->foreign('factory_id')
-                ->references('id')
-                ->on('factories')
-            ;
-            $table->foreign('store_id')
-                ->references('id')
-                ->on('stores')
-            ;
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
