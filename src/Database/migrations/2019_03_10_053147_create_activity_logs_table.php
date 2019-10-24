@@ -20,13 +20,7 @@ class CreateActivityLogsTable extends Migration
             $table->text('long_text');
             $table->string('request_uri')->nullable();
             $table->string('client_ip')->nullable();
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->timestamps(); 
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-            ;
+            $table->timestamps();  
         });
     }
 
