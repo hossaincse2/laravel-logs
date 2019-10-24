@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace MDHossain\laravelLogs\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Auth;

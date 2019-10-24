@@ -1,4 +1,4 @@
-# How to create and publish a Laravel package on packagist
+# How to use Audit and Error Logs in your laravel app
 A Laravel package is a set of reusable classes created to add extra functionality to a Laravel website. In clearer terms, a package is to Laravel, what plugins are to WordPress. The primary goal of Laravel packages is to reduce development time by making reusable features into a set of standalone classes that can be used within any Laravel project.
 
 [View tutorial](https://pusher.com/tutorials/publish-laravel-packagist)
@@ -32,53 +32,51 @@ php artisan key:generate
 - clone this repository to the newly created folder
 
  
-- Tell Laravel how to load our package and use it's functions, so inside the root of your Laravel app in the composer.json add this code:
+- You can install the package via composer::
 
 ```
-
-"autoload": {
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ],
-        "psr-4": {
-            "mdhossain\\laravel-logs\\": "packages/mdhossain/laravel-logs/src",
-            "App\\": "app/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "mdhossain\\laravel-logs\\": "packages/mdhossain/laravel-logs/src",
-            "Tests\\": "tests/"
-        }
-    },
-
-    Or
-
-You can install the package via composer:
-
 composer require mdhossain/laravel-logs
 
 ```
-- Dump the composer autoloader
-
-```
-composer dump-autoload
-```
+ 
 
 - Next, we need to add our new Service Provider in our `config/app.php` inside the `providers` array:
 
 ```
 'providers' => [
          ...,
-            App\Providers\RouteServiceProvider::class,
+            App\Providers\RouteServiceProvider::class, 
             // Our new package class
+            MDHossain\laravelLogs\ContactFormServiceProvider::class,
          ],
 ```
 - Migrate the database tables
 
 ```
-php artisan migrate
+php artisan migrate:refresh
+
+```
+
+- You can use  your controller for log data save:
+
+```
+use MDHossain\laravelLogs\Contracts\ActivityLogInterface;
+
+public function insertUser(ActivityLogInterface $activitylog){
+    
+    $activitylog->dataSave($id=null, $log_description, $data, $log_title, $log_type);
+    
+}
+
+```
+
+
+- You can browse for log show:
+
+```
+http://localhost:8000/audit-log
+http://localhost:8000/error-log
+
 ```
 
 And finally, start the application by running:
@@ -89,11 +87,7 @@ php artisan serve
 
 Visit http://localhost:8000/ in your browser to view the demo.
 
-If you want to include the project as a package to your app, run:
 
-```
-composer require mdhossain/laravel-logs
-```
 
 ## Built With
 

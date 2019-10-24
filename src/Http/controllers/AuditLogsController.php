@@ -5,9 +5,10 @@
  * https://github.com/laravel/framework/blob/5.3/src/Illuminate/Auth/Console/stubs/make/controllers/HomeController.stub
  */
 
-namespace App\Http\Controllers\Admin\ActivityLogs;
-use App\Contracts\ActivityLogInterface;
-use App\Models\ActivityLog;
+namespace MDHossain\laravelLogs\Http\Controllers;
+
+use MDHossain\laravelLogs\Models\ActivityLog;
+use MDHossain\laravelLogs\Contracts\ActivityLogInterface;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class AuditLogsController extends Controller {
         $requestData = $request->all();
         $data = $activityLogs->allAuditLogs($requestData);
         $url = "report/audit-log-print";
-        return view('adminlte::report.audit-log', ['data' => $data, 'url' => $url]);
+        return view('auditlogs.audit-log', ['data' => $data, 'url' => $url]);
     }
 
     public function ajax(Request $request, ActivityLogInterface $activityLogs) {
