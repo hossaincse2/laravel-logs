@@ -34,25 +34,15 @@ Error Log Report
                 <!-- form start -->
                 <form class="" action="{{ url($url) }}" method="get" id="errorLogForm" name="errorLogForm">
                     <div class="box-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="user_type">User Type</label>
-                                    <select class="form-control select2" name="user_type" id="user_type" data-placeholder="Select a User type" style="width: 100%;">                                   
-                                        <option value="store">Store</option>
-                                        <option value="factory">Factory</option>
+                        <div class="row"> 
 
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="start_at">Start Date</label>
                                     <input class="form-control" type="date" value="{{date('Y-m-d')}}" id="start_at" name="start_at" >
                                 </div>
                             </div>                         
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label  for="end_at">End Date</label>
                                     <input class="form-control" type="date" id="end_at" value="{{date('Y-m-d')}}" name="end_at"  >
