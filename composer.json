@@ -1,5 +1,5 @@
 {
-    "name": "mdhossain/laravel-logs",
+    "name": "mdhossain/laravellogs",
     "description": "Audit logs and Error logs for laravel",
     "type": "library",
     "authors": [
@@ -12,7 +12,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "laravel-logs\\logs\\": "src/"
+            "mdhossain\\laravellogs\\": "src/"
         }
     }
 }
