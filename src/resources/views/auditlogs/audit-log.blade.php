@@ -83,7 +83,7 @@
 
 
 
-@push('scripts')
+@section('scripts')
 <script type="text/javascript">
                                     function search() {
                                         var data = $("#auditLogForm").serialize();
@@ -104,5 +104,5 @@
 
                                     window.onload = search;
 </script>
-@endpush
+@endsection
 

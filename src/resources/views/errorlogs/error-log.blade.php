@@ -93,7 +93,7 @@ Error Log Report
 
 
 
-@push('scripts')
+@section('scripts')
 <script type="text/javascript">
                                     function search() {
                                         var data = $("#errorLogForm").serialize();
@@ -114,5 +114,5 @@ Error Log Report
 
                                     window.onload = search;
 </script>
-@endpush
+@endsection
 
