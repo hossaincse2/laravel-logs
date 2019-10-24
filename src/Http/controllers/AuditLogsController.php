@@ -44,7 +44,7 @@ class AuditLogsController extends Controller {
             //print_r($data);
 
 //            print_r($data);die;
-            return view('laravelLogs::auditlogs.audit-log-grid', ["data" => $data]);
+            return view('laravelLogs:auditlogs.audit-log-grid', ["data" => $data]);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -57,7 +57,7 @@ class AuditLogsController extends Controller {
             $data = $activityLogs->allAuditLogs($filters);
 
 //            print_r($data);die;
-            return view('laravelLogs::auditlogs.audit-log-print', ["data" => $data, "request" => $filters]);
+            return view('laravelLogs:auditlogs.audit-log-print', ["data" => $data, "request" => $filters]);
         } catch (\Exception $e) {
             throw $e;
         }
