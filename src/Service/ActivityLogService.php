@@ -31,14 +31,6 @@ class ActivityLogService implements ActivityLogInterface {
         // User Login Information
         $user_id = Auth::user()->id;
         $store_id = (NULL);
-        $factory_id = (NULL);
-
-        if (Auth::User()->hasGroup('store-admin')) {
-            $store_id = Auth::user()->store_id;
-        }
-        if (Auth::User()->hasGroup('factory-admin')) {
-            $factory_id = Auth::user()->factory_id;
-        }
 
 
         // User PC IP AND Client IP AND URL Information
@@ -70,9 +62,6 @@ class ActivityLogService implements ActivityLogInterface {
         $actiVityLog->long_text = $log_txt;
         $actiVityLog->request_uri = $clientUrl;
         $actiVityLog->client_ip = $myPcIP;
-        $actiVityLog->user_id = $user_id;
-        $actiVityLog->store_id = $store_id;
-        $actiVityLog->factory_id = $factory_id;
 
         $actiVityLog->save();
         //print_r(DB::getQueryLog());exit;
@@ -109,19 +98,7 @@ class ActivityLogService implements ActivityLogInterface {
 
         $auditLogs = $this->activitylogEloquent;
 
-        //store
-
-        if (isset($search['user_type']) && $search['user_type'] == "store") {
-            $store_id = Auth::user()->store_id;
-            $auditLogs = $auditLogs->where("store_id", "=", $store_id);
-        }
-
-        if (isset($search['user_type']) && $search['user_type'] == "factory") {
-            $factory_id = Auth::user()->factory_id;
-            $auditLogs = $auditLogs->where("factory_id", "=", $factory_id);
-        }
-
-
+       
         $auditLogs = $auditLogs->where("log_type", "=", "audit_log");
 
         if ((isset($search['start_at']) && isset($search['end_at'])) && ($start_at = $search['start_at'] && $end_at = $search['end_at'])) {
@@ -145,19 +122,7 @@ class ActivityLogService implements ActivityLogInterface {
     public function allErrorLogs($search = array()) {
 
         $auditLogs = $this->activitylogEloquent;
-
-        //store
-
-        if (isset($search['user_type']) && $search['user_type'] == "store") {
-            $store_id = Auth::user()->store_id;
-            $auditLogs = $auditLogs->where("store_id", "=", $store_id);
-        }
-
-        if (isset($search['user_type']) && $search['user_type'] == "factory") {
-            $factory_id = Auth::user()->factory_id;
-            $auditLogs = $auditLogs->where("factory_id", "=", $factory_id);
-        }
-
+ 
 
         $auditLogs = $auditLogs->where("log_type", "=", "error_log");
 
