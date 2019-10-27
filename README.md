@@ -1,7 +1,5 @@
 # How to use Audit and Error Logs in your laravel app
-A Laravel package is a set of reusable classes created to add extra functionality to a Laravel website. In clearer terms, a package is to Laravel, what plugins are to WordPress. The primary goal of Laravel packages is to reduce development time by making reusable features into a set of standalone classes that can be used within any Laravel project.
-
-[View tutorial](https://pusher.com/tutorials/publish-laravel-packagist)
+ Its easy to use in your laravel app. You can save all audit and error log type data and then also show all in your laravel app. Easy to track your actions and also find errors from your application by using this package. All logs are stored in database in this package.
 
 ## Getting Started
 - Create a fresh laravel package
