@@ -92,6 +92,19 @@ class ActivityLogService implements ActivityLogInterface {
         return $mac;
     }
 
+    public function getAllAuditLogs() {
+
+
+
+        $auditLogs = $this->activitylogEloquent;
+
+       
+        $auditLogs = $auditLogs->where("log_type", "=", "audit_log"); 
+
+        return $auditLogs->orderBy('id', 'desc')->get();
+        //echo $auditLogs->toSql();exit;
+        //dd(DB::getQueryLog());
+    }
     public function allAuditLogs($search = array()) {
 
 
@@ -119,6 +132,17 @@ class ActivityLogService implements ActivityLogInterface {
         //dd(DB::getQueryLog());
     }
 
+    public function getAllErrorLogs() {
+
+        $auditLogs = $this->activitylogEloquent;
+ 
+
+        $auditLogs = $auditLogs->where("log_type", "=", "error_log");
+ 
+        return $auditLogs->orderBy('id', 'desc')->get();
+        //echo $auditLogs->toSql();exit;
+        //dd(DB::getQueryLog());
+    }
     public function allErrorLogs($search = array()) {
 
         $auditLogs = $this->activitylogEloquent;

@@ -32,6 +32,11 @@ class ErrorLogsController extends Controller {
     //          return $this->activityLogs->allErrorLogs();
     // }
 
+    public function getAllErrorLogs(ActivityLogInterface $activityLogs) {
+
+        $data = $activityLogs->allErrorLogs();
+        return view('laravel-logs::errorlogs.error-log-grid', ['data' => $data]);
+    }
     public function index(Request $request, ActivityLogInterface $activityLogs) {
 
 

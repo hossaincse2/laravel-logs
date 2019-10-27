@@ -65,6 +65,40 @@ public function insertUser(ActivityLogInterface $activitylog){
 
 ```
 
+- You can use  your controller for log data show:
+
+```
+use MDHossain\laravelLogs\Contracts\ActivityLogInterface;
+
+public function showLogs(ActivityLogInterface $activitylog){
+    
+    For audit logs
+    $activitylog->getAllAuditLogs();
+
+    For error logs
+    $activitylog->getAllErrorLogs();
+    
+}
+
+```
+
+- You can use  your controller for log data show by date wise search:
+
+```
+use MDHossain\laravelLogs\Contracts\ActivityLogInterface;
+
+public function filterLogs(ActivityLogInterface $activitylog){
+    
+    For audit logs Search by to date and from date
+    $activitylog->allAuditLogs($search = array();
+
+    For error logs Search by to date and from date
+    $activitylog->allErrorLogs($search = array();
+    
+}
+
+```
+
 
 - You can browse for log show:
 
@@ -76,7 +110,7 @@ http://localhost:8000/error-log
 
 OR 
 
-- Call your controller view
+- Call your controller direct view
 
 ```
 return view('laravel-logs::auditlogs.audit-log');

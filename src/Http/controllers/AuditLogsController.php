@@ -24,6 +24,12 @@ class AuditLogsController extends Controller {
 
     }
 
+    public function auditLogs(Request $request, ActivityLogInterface $activityLogs) {
+
+        $data = $activityLogs->getAllAuditLogs();
+        return view('laravel-logs::auditlogs.audit-log-grid', ['data' => $data]);
+    }
+
     public function index(Request $request, ActivityLogInterface $activityLogs) {
 
 
