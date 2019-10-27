@@ -26,12 +26,7 @@ cp .env.example .env
 ```
 php artisan key:generate
 ```
-- create a folder called `packages`, then create a new folder called samuelayo. 
-> Note that you can subtitute samuelayo with your own vendor name. Be sure to change the refrence in every other aspect of the app
-
-- clone this repository to the newly created folder
-
- 
+  
 - You can install the package via composer::
 
 ```
